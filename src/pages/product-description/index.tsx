@@ -26,6 +26,7 @@ export default function ProductDescription() {
   useEffect(() => {
     if (products.length === 0) {
       api.get("/products").then((res) => {
+        console.log('/products', res.data);
         addProduct(res.data);
         addFilterProduct(res.data);
       });
@@ -56,7 +57,7 @@ export default function ProductDescription() {
             <p>{product.description}</p>
             <p>
               <span>
-                Preço: R$ {product.price.toFixed(2).replace(".", ",")}
+                Preço: R$ {product?.price.toFixed(2).replace(".", ",")}
               </span>
             </p>
             <button onClick={() => addCartProduct(product)} className="add">
@@ -93,7 +94,7 @@ export default function ProductDescription() {
                       <p>{prod.category}</p>
                       <p>
                         <span>
-                          R$ {prod.price.toFixed(2).replace(".", ",")}
+                          R$ {prod.price?.toFixed(2).replace(".", ",")}
                         </span>
                       </p>
                     </div>

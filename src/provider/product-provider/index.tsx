@@ -32,6 +32,7 @@ export const ProductProvider = ({ children }: ProviderProps) => {
   );
 
   const addProduct = (arr: ProductProps[]) => {
+    console.log('arr', arr);
     setProduct(arr);
     localStorage.setItem("@Product", JSON.stringify(arr));
   };
@@ -41,6 +42,7 @@ export const ProductProvider = ({ children }: ProviderProps) => {
 
   const refresh = ()=>{
     api.get("/products").then((res) => {
+      console.log('res.data', res.data);
       addProduct(res.data);
       addFilterProduct(res.data);
     });
