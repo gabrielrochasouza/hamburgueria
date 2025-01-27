@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL:'https://fake-api-kenzieshop.herokuapp.com'
+    baseURL:'https://pure-node-crud-application.onrender.com/'
 })
 
 const cepApi = axios.create({
