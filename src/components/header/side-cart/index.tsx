@@ -40,7 +40,7 @@ export default function SideCart({openCloseCart}:SideCartProp){
                                             <span className="reader">{product.qtd}</span>
                                             <span className="btn plus" onClick={()=>addCartProduct(product)}>+</span>
                                         </div>
-                                        <span>R$ {product.price.toFixed(2).replace('.',',')}</span>
+                                        <span>R$ {product?.price?.toFixed(2)?.replace('.',',')}</span>
                                     </div>
                                     <button onClick={()=>removeAll(product)}>
                                         <FaTrash/>

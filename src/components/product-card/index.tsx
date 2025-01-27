@@ -16,6 +16,7 @@ interface PropsCard{
 }
 
 export default function ProductCard({item}:PropsCard) {
+  console.log('item', item);
   const {name,category,img_url,price,id} = item
   const {addCartProduct} = useCartProvider()
 

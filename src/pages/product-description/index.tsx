@@ -35,9 +35,7 @@ export default function ProductDescription() {
 
   const { id }: ObjProp = useParams();
 
-  const idNum: number = Number(id);
-
-  const product = products.find((prod) => Number(prod.id) === idNum);
+  const product = products.find((prod) => String(prod.id) === String(id));
 
   const navigate = useNavigate();
 
