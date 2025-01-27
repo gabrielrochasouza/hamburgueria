@@ -83,7 +83,7 @@ export default function Shop() {
           </div>
         </section>
 
-        {products.length ? (
+        {products.filter(product => product).length ? (
           <ul>
             {filterproducts.length ? (
               filterproducts.map((product, index) => (
